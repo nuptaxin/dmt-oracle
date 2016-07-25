@@ -1,0 +1,15 @@
+package org.renix.dmt.oracle.errorenum;
+
+public enum ParamError {
+    PARAM_ERROR_URL,
+    PARAM_ERROR_USER,
+    PARAM_ERROR_PWD,
+    PARAM_ERROR_CONN,
+    PARAM_ERROR_EXPPATH,
+    PARAM_ERROR_IMPPATH,
+    PARAM_ERROR_STARTTIME,
+    PARAM_ERROR_ENDTIME,
+    PARAM_ERROR_FROMUSER,
+    PARAM_ERROR_TOUSER,
+    PARAM_PASS,
+}
