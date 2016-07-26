@@ -4,7 +4,7 @@
 
     <groupId>org.renix.dmt</groupId>
     <artifactId>dmt-oracle</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.0.1</version>
     <packaging>jar</packaging>
 
     <name>dmt-oracle</name>
