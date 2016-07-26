@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.renix.dmt.oracle.ToolApp;
+import org.renix.dmt.oracle.DataMigrationTool;
 import org.renix.dmt.oracle.bean.DataValue;
 import org.sql2o.Sql2o;
 
@@ -23,7 +23,7 @@ public class DatabaseUtil {
         DatabaseUtil.sql2o = sql2o;
     }
 
-    private static BasicDataSource dataSource = (BasicDataSource) ToolApp.ctx
+    private static BasicDataSource dataSource = (BasicDataSource) DataMigrationTool.ctx
             .getBean("dataSource");
 
     /**

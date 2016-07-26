@@ -3,7 +3,7 @@ package org.renix.dmt.oracle.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import org.renix.dmt.oracle.ToolApp;
+import org.renix.dmt.oracle.DataMigrationTool;
 
 /**
  * 菜单栏连接并获取表结构监听器
@@ -23,7 +23,7 @@ public class JmiConnListener implements ActionListener {
 //            expProperties.setExpStartTime(ToolApp.textExpStartTime.getText());
 //            expProperties.setExpEndTime(ToolApp.textExpEndTime.getText());
 //            expProperties.setExpmaxSize(ToolApp.MAXSIZEINPUT.toString());
-            ToolApp.connDatabase();
+            DataMigrationTool.connDatabase();
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
