@@ -1051,7 +1051,7 @@ public class DataMigrationTool extends JFrame {
                                 dateTime = DateTime.parse(timeString, formatYear);
                                 parType = 3;
                             } catch (Exception e2) {
-                                System.out.println("输入格式错误!请重新输入.");
+                                System.out.println("输入格式错误!请重新输入."+timeString);
                             }
                         }
                     }
