@@ -1620,14 +1620,14 @@ public class DataMigrationTool extends JFrame {
     class JmiAboutListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            DialogUtil.message("易司拓 数据库导入导出工具", "关于我们", -1);
+            DialogUtil.message("Data Migration Tool For Oracle", "关于我们", -1);
         }
     }
 
     class JmiContactListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            DialogUtil.message("Bug反馈邮箱：nuptaxin@gmail.com\n网址：www.renzx.org",
+            DialogUtil.message("Bug反馈邮箱：nuptaxin@gmail.com\n网址：www.renix.org\n内网下载地址：192.1.1.56/resource/dmt-oracle\n源码地址：https://github.com/nuptaxin/dmt-oracle",
                     "联系我们", -1);
         }
     }
