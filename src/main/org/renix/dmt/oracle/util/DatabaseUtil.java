@@ -96,7 +96,7 @@ public class DatabaseUtil {
             LOGGER.warn("关闭从Spring获取的数据源时出现异常！", e);
         }
         String[] strArray = StringUtils.split(url, "/");
-        dataSource.setUrl("jdbc:oracle:thin:@" + strArray[0] + ":1521:"
+        dataSource.setUrl("jdbc:oracle:thin:@" + strArray[0] + ":"
                 + strArray[1]);
         String[] strArray1 = StringUtils.split(userId, "/");
         dataSource.setUsername(strArray1[0]);
