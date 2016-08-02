@@ -1,13 +1,9 @@
 package org.renix.dmt.oracle.util;
 
-import javax.annotation.PostConstruct;
-
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Conf4Imp {
     static Logger LOGGER = Logger.getLogger(Conf4Imp.class);
     static public String ADDR = null;
@@ -33,7 +29,10 @@ public class Conf4Imp {
         Conf4Imp.config = config;
     }
 
-    @PostConstruct
+    static{
+        initConf();
+    }
+    
     public static void initConf() {
         config = new PropertiesConfiguration();
         config.setEncoding("UTF-8");
