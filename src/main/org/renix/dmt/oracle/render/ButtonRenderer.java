@@ -7,6 +7,10 @@ import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.TableCellRenderer;
 
+/**
+ * @author renzx
+ *
+ */
 @SuppressWarnings("serial")
 public class ButtonRenderer extends JButton implements TableCellRenderer {
 
@@ -16,10 +20,9 @@ public class ButtonRenderer extends JButton implements TableCellRenderer {
 
     }
 
-    public Component getTableCellRendererComponent(JTable table,
-            Object value,
+    public Component getTableCellRendererComponent(JTable table, Object value,
 
-            boolean isSelected, boolean hasFocus, int row, int column) {
+    boolean isSelected, boolean hasFocus, int row, int column) {
 
         if (isSelected) {
 
@@ -42,4 +45,3 @@ public class ButtonRenderer extends JButton implements TableCellRenderer {
     }
 
 }
-

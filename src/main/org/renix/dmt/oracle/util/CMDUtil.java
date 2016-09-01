@@ -1,5 +1,9 @@
 package org.renix.dmt.oracle.util;
 
+/**
+ * @author renzx
+ *
+ */
 public class CMDUtil {
     public static String[] getNewCmd(String title, String command) {
         String[] cmd = new String[3];

@@ -2,6 +2,10 @@ package org.renix.dmt.oracle.render;
 
 import javax.swing.JOptionPane;
 
+/**
+ * @author renzx
+ *
+ */
 public class DialogUtil {
 
     /**
@@ -20,8 +24,7 @@ public class DialogUtil {
      * @exception WARNING_MESSAGE用于警告消息
      * @exception QUESTION_MESSAGE用于问题
      */
-    public static void message(String message, String title,
-            int messageType) {
+    public static void message(String message, String title, int messageType) {
         JOptionPane.showMessageDialog(null, message, title, messageType);
     }
 
@@ -39,10 +42,8 @@ public class DialogUtil {
      * @param messageType
      * @exception 指定此消息种类的整数主要用于确定来自可插入外观的图标同上
      */
-    public static int confirm(String message, String title,
-            int optionType, int messageType) {
-        return JOptionPane.showConfirmDialog(null, message, title, optionType,
-                messageType);
+    public static int confirm(String message, String title, int optionType, int messageType) {
+        return JOptionPane.showConfirmDialog(null, message, title, optionType, messageType);
     }
 
     /**
@@ -57,24 +58,21 @@ public class DialogUtil {
      * @param options
      * @exception 指示用户可能选择的对象组成的数组
      * @exception 如果对象是组件则可以正确呈现
-     * @exception 非String对象使用其
-     *                toString 方法呈现
+     * @exception 非String对象使用其 toString 方法呈现
      * @exception 如果此参数为null则由外观确定选项
      * @param initialValue
      * @exception 表示对话框的默认选择的对象
-     * @exception 只有在使用options时才有意义可以为
-     *                null
+     * @exception 只有在使用options时才有意义可以为 null
      * @return
      */
-    public static int option(String message, String title,
-            int optionType, int messageType, String[] options,
-            String initialValue) {
-        return JOptionPane.showOptionDialog(null, message, title, optionType,
-                messageType, null, options, null);
+    public static int option(String message, String title, int optionType, int messageType,
+            String[] options, String initialValue) {
+        return JOptionPane.showOptionDialog(null, message, title, optionType, messageType, null,
+                options, null);
     }
 
     public static void main(String[] args) {
-//        showMessageDialog("msg", "title", JOptionPane.PLAIN_MESSAGE);
-        option("msg", "title", 2, 1, new String[] { "1", "2" }, "1");
+        // showMessageDialog("msg", "title", JOptionPane.PLAIN_MESSAGE);
+        option("msg", "title", 2, 1, new String[] {"1", "2"}, "1");
     }
 }

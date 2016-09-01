@@ -7,6 +7,10 @@ import org.apache.commons.lang.StringUtils;
 
 import com.google.common.collect.Lists;
 
+/**
+ * @author renzx
+ *
+ */
 public class TransferSizeUtil {
 
     public static String Long2Str(Long bytes) {
@@ -18,33 +22,33 @@ public class TransferSizeUtil {
             bytes = bytes / 1000;
         }
         switch (ls1.size()) {
-        case 0:
-            bytes1 = "0B";
-            break;
-        case 1:
-            bytes1 = ls1.get(0) + "B";
-            break;
-        case 2:
-            Double dk = ls1.get(1) + ls1.get(0) / 1000.0;
-            bytes1 = df.format(dk) + "K";
-            break;
-        case 3:
-            Double dm = ls1.get(2) + ls1.get(1) / 1000.0;
-            bytes1 = df.format(dm) + "M";
-            break;
-        case 4:
-            Double dg = ls1.get(3) + ls1.get(2) / 1000.0;
-            bytes1 = df.format(dg) + "G";
-            break;
+            case 0:
+                bytes1 = "0B";
+                break;
+            case 1:
+                bytes1 = ls1.get(0) + "B";
+                break;
+            case 2:
+                Double dk = ls1.get(1) + ls1.get(0) / 1000.0;
+                bytes1 = df.format(dk) + "K";
+                break;
+            case 3:
+                Double dm = ls1.get(2) + ls1.get(1) / 1000.0;
+                bytes1 = df.format(dm) + "M";
+                break;
+            case 4:
+                Double dg = ls1.get(3) + ls1.get(2) / 1000.0;
+                bytes1 = df.format(dg) + "G";
+                break;
 
-        default:
-            Double dx = 0d;
-            for (int i = ls1.size() - 1; i >= 3; i++) {
-                dx += ls1.get(i);
-            }
-            dx += ls1.get(2) / 1000.0;
-            bytes1 = df.format(dx) + "G";
-            break;
+            default:
+                Double dx = 0d;
+                for (int i = ls1.size() - 1; i >= 3; i++) {
+                    dx += ls1.get(i);
+                }
+                dx += ls1.get(2) / 1000.0;
+                bytes1 = df.format(dx) + "G";
+                break;
         }
         return bytes1;
     }

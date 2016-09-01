@@ -83,13 +83,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
+/**
+ * 程序入口
+ * 
+ * @author renzx
+ */
 @SuppressWarnings("serial")
 public class DataMigrationTool extends JFrame {
     Logger LOGGER = Logger.getLogger(DataMigrationTool.class);
     public final static String expToolName = "数据库导入导出工具";
     public static ApplicationContext ctx = null;
-    public static String[] tableHeadStr = { "类型", "表名", "大小", "操作" };
-    public static String[] tableHeadImpStr = { "文件名", "文件路径", "操作" };
+    public static String[] tableHeadStr = {"类型", "表名", "大小", "操作"};
+    public static String[] tableHeadImpStr = {"文件名", "文件路径", "操作"};
     Field[] f = Conf4Exp.class.getDeclaredFields();
     Field[] fImp = Conf4Imp.class.getDeclaredFields();
 
@@ -155,7 +160,7 @@ public class DataMigrationTool extends JFrame {
     DateChooser dateChooser4 = DateChooser.getInstance("yyyy-MM");
     DateChooser dateChooser5 = DateChooser.getInstance("yyyy");
     DateChooser dateChooser6 = DateChooser.getInstance("yyyy");
-    
+
     // 第一步的按钮
     JButton jbtnSetDefault_en_1 = new JButton("保存");
     JButton jbtnReSet_en_1 = new JButton("重置");
@@ -273,8 +278,7 @@ public class DataMigrationTool extends JFrame {
         textExpMaxSize.addMouseListener(new MaxSizeListener());
         jbtnNext_en_1.addActionListener(new Jbtn_en_1_NextListener());
         jbtnConnTest_en_1.addActionListener(new Jbtn_en_1_ConnTestListener());
-        jbtnSetDefault_en_1
-                .addActionListener(new Jbtn_en_1_SetDefaultListener());
+        jbtnSetDefault_en_1.addActionListener(new Jbtn_en_1_SetDefaultListener());
         jbtnReSet_en_1.addActionListener(new Jbtn_en_1_ReSetListener());
 
         jbtnReSet_en_2.addActionListener(new Jbtn_en_2_ReSetListener());
@@ -286,8 +290,7 @@ public class DataMigrationTool extends JFrame {
 
         jbtnNext_in_1.addActionListener(new Jbtn_in_1_NextListener());
         jbtnConnTest_in_1.addActionListener(new Jbtn_in_1_ConnTestListener());
-        jbtnSetDefault_in_1
-                .addActionListener(new Jbtn_in_1_SetDefaultListener());
+        jbtnSetDefault_in_1.addActionListener(new Jbtn_in_1_SetDefaultListener());
         jbtnReSet_in_1.addActionListener(new Jbtn_in_1_ReSetListener());
 
         jbtnReSet_in_2.addActionListener(new Jbtn_in_2_ReSetListener());
@@ -304,12 +307,9 @@ public class DataMigrationTool extends JFrame {
 
     private JPanel getTabImpStatusJPanel() {
         // 选项卡2下添加
-        tabImpStatusPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,
-                10));
-        tabImpStatusPanel.add(new JComponent() {
-        });
-        tabImpStatusPanel.add(new JComponent() {
-        });
+        tabImpStatusPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        tabImpStatusPanel.add(new JComponent() {});
+        tabImpStatusPanel.add(new JComponent() {});
         tabImpStatusPanel.add(jbImpAll);
         return tabImpStatusPanel;
     }
@@ -326,8 +326,7 @@ public class DataMigrationTool extends JFrame {
         jtImp.setRowHeight(30);
         jtImp.setEnabled(false);
         tabImpMainPanel.add(new JScrollPane(jtImp));
-        tabImpMainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,
-                10));
+        tabImpMainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         return tabImpMainPanel;
     }
 
@@ -358,8 +357,7 @@ public class DataMigrationTool extends JFrame {
 
             Border jpNorthb2 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
             Border jpNorthb1 = BorderFactory.createTitledBorder("请设置导入参数");
-            tabImpParamPanelS1U.setBorder(BorderFactory.createCompoundBorder(
-                    jpNorthb2, jpNorthb1));
+            tabImpParamPanelS1U.setBorder(BorderFactory.createCompoundBorder(jpNorthb2, jpNorthb1));
 
             FlowLayout layout0 = new FlowLayout(FlowLayout.RIGHT, 15, 3);
             tabImpParamPanelS1D.setLayout(layout0);
@@ -367,11 +365,9 @@ public class DataMigrationTool extends JFrame {
             tabImpParamPanelS1D.add(jbtnReSet_in_1);
             tabImpParamPanelS1D.add(jbtnConnTest_in_1);
             tabImpParamPanelS1D.add(jbtnNext_in_1);
-            tabImpParamPanelS1D.setBorder(BorderFactory.createEmptyBorder(0,
-                    10, 0, 10));
+            tabImpParamPanelS1D.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
 
-            BoxLayout layout1 = new BoxLayout(tabImpParamPanel,
-                    BoxLayout.Y_AXIS);
+            BoxLayout layout1 = new BoxLayout(tabImpParamPanel, BoxLayout.Y_AXIS);
             tabImpParamPanel.setLayout(layout1);
             tabImpParamPanel.add(tabImpParamPanelS1U);
             tabImpParamPanel.add(tabImpParamPanelS1D);
@@ -388,8 +384,7 @@ public class DataMigrationTool extends JFrame {
 
             Border jpNorthb2 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
             Border jpNorthb1 = BorderFactory.createTitledBorder("请设置导入参数");
-            tabImpParamPanelS2U.setBorder(BorderFactory.createCompoundBorder(
-                    jpNorthb2, jpNorthb1));
+            tabImpParamPanelS2U.setBorder(BorderFactory.createCompoundBorder(jpNorthb2, jpNorthb1));
 
             c.anchor = GridBagConstraints.NORTHWEST;
             int i = 0;
@@ -411,8 +406,7 @@ public class DataMigrationTool extends JFrame {
             tabImpParamPanelS2D.add(jbtnReSet_in_2);
             tabImpParamPanelS2D.add(jbtnBack_in_2);
             tabImpParamPanelS2D.add(jbtnFinish_in_2);
-            tabImpParamPanelS2D.setBorder(BorderFactory.createEmptyBorder(0,
-                    10, 0, 10));
+            tabImpParamPanelS2D.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
 
             tabImpParamPanel.add(tabImpParamPanelS2U);
             tabImpParamPanel.add(tabImpParamPanelS2D);
@@ -445,8 +439,7 @@ public class DataMigrationTool extends JFrame {
 
             Border jpNorthb2 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
             Border jpNorthb1 = BorderFactory.createTitledBorder("请设置导出参数");
-            tabImpParamPanelS3U.setBorder(BorderFactory.createCompoundBorder(
-                    jpNorthb2, jpNorthb1));
+            tabImpParamPanelS3U.setBorder(BorderFactory.createCompoundBorder(jpNorthb2, jpNorthb1));
 
             FlowLayout layout0 = new FlowLayout(FlowLayout.RIGHT, 15, 3);
             tabImpParamPanelS3D.setLayout(layout0);
@@ -454,11 +447,9 @@ public class DataMigrationTool extends JFrame {
             tabImpParamPanelS3D.add(jbtnSelectDir_in_3);
             tabImpParamPanelS3D.add(jbtnBackHome_in_3);
             tabImpParamPanelS3D.add(jbtnBack_in_3);
-            tabImpParamPanelS3D.setBorder(BorderFactory.createEmptyBorder(0,
-                    10, 0, 10));
+            tabImpParamPanelS3D.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
 
-            BoxLayout layout1 = new BoxLayout(tabImpParamPanel,
-                    BoxLayout.Y_AXIS);
+            BoxLayout layout1 = new BoxLayout(tabImpParamPanel, BoxLayout.Y_AXIS);
             tabImpParamPanel.setLayout(layout1);
             tabImpParamPanel.add(tabImpParamPanelS3U);
             tabImpParamPanel.add(tabImpParamPanelS3D);
@@ -469,11 +460,9 @@ public class DataMigrationTool extends JFrame {
 
     private JPanel getTabExpStatusJPanel() {
         // 选项卡1下添加
-        tabExpStatusPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,
-                10));
+        tabExpStatusPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         tabExpStatusPanel.add(jlMaxSize);
-        tabExpStatusPanel.add(new JComponent() {
-        });
+        tabExpStatusPanel.add(new JComponent() {});
         tabExpStatusPanel.add(jbExpAll);
         return tabExpStatusPanel;
     }
@@ -490,8 +479,7 @@ public class DataMigrationTool extends JFrame {
         jt.setRowHeight(30);
         jt.setEnabled(false);
         tabExpMainPanel.add(new JScrollPane(jt));
-        tabExpMainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,
-                10));
+        tabExpMainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         return tabExpMainPanel;
     }
 
@@ -543,8 +531,7 @@ public class DataMigrationTool extends JFrame {
 
             Border jpNorthb2 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
             Border jpNorthb1 = BorderFactory.createTitledBorder("请设置导出参数");
-            tabExpParamPanelS1U.setBorder(BorderFactory.createCompoundBorder(
-                    jpNorthb2, jpNorthb1));
+            tabExpParamPanelS1U.setBorder(BorderFactory.createCompoundBorder(jpNorthb2, jpNorthb1));
 
             FlowLayout layout0 = new FlowLayout(FlowLayout.RIGHT, 15, 3);
             tabExpParamPanelS1D.setLayout(layout0);
@@ -552,11 +539,9 @@ public class DataMigrationTool extends JFrame {
             tabExpParamPanelS1D.add(jbtnReSet_en_1);
             tabExpParamPanelS1D.add(jbtnConnTest_en_1);
             tabExpParamPanelS1D.add(jbtnNext_en_1);
-            tabExpParamPanelS1D.setBorder(BorderFactory.createEmptyBorder(0,
-                    10, 0, 10));
+            tabExpParamPanelS1D.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
 
-            BoxLayout layout1 = new BoxLayout(tabExpParamPanel,
-                    BoxLayout.Y_AXIS);
+            BoxLayout layout1 = new BoxLayout(tabExpParamPanel, BoxLayout.Y_AXIS);
             tabExpParamPanel.setLayout(layout1);
             tabExpParamPanel.add(tabExpParamPanelS1U);
             tabExpParamPanel.add(tabExpParamPanelS1D);
@@ -573,8 +558,7 @@ public class DataMigrationTool extends JFrame {
 
             Border jpNorthb2 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
             Border jpNorthb1 = BorderFactory.createTitledBorder("请设置导出参数");
-            tabExpParamPanelS2U.setBorder(BorderFactory.createCompoundBorder(
-                    jpNorthb2, jpNorthb1));
+            tabExpParamPanelS2U.setBorder(BorderFactory.createCompoundBorder(jpNorthb2, jpNorthb1));
 
             c.anchor = GridBagConstraints.NORTHWEST;
             int i = 0;
@@ -596,8 +580,7 @@ public class DataMigrationTool extends JFrame {
             tabExpParamPanelS2D.add(jbtnReSet_en_2);
             tabExpParamPanelS2D.add(jbtnBack_en_2);
             tabExpParamPanelS2D.add(jbtnFinish_en_2);
-            tabExpParamPanelS2D.setBorder(BorderFactory.createEmptyBorder(0,
-                    10, 0, 10));
+            tabExpParamPanelS2D.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
 
             tabExpParamPanel.add(tabExpParamPanelS2U);
             tabExpParamPanel.add(tabExpParamPanelS2D);
@@ -612,8 +595,7 @@ public class DataMigrationTool extends JFrame {
             JTextField textExpLog = new JTextField(Conf4Exp.LOG, 20);
             JTextField textExpBat = new JTextField(Conf4Exp.BAT, 20);
             JTextField textExpMaxSize = new JTextField(Conf4Exp.MAXSIZE, 20);
-            JTextField textExpStartMonth = new JTextField(Conf4Exp.STARTMONTH,
-                    20);
+            JTextField textExpStartMonth = new JTextField(Conf4Exp.STARTMONTH, 20);
             JTextField textExpEndMonth = new JTextField(Conf4Exp.ENDMONTH, 20);
             JTextField textExpStartDate = new JTextField(Conf4Exp.STARTDATE, 20);
             JTextField textExpEndDate = new JTextField(Conf4Exp.ENDDATE, 20);
@@ -660,18 +642,15 @@ public class DataMigrationTool extends JFrame {
 
             Border jpNorthb2 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
             Border jpNorthb1 = BorderFactory.createTitledBorder("请设置导出参数");
-            tabExpParamPanelS3U.setBorder(BorderFactory.createCompoundBorder(
-                    jpNorthb2, jpNorthb1));
+            tabExpParamPanelS3U.setBorder(BorderFactory.createCompoundBorder(jpNorthb2, jpNorthb1));
 
             FlowLayout layout0 = new FlowLayout(FlowLayout.RIGHT, 15, 3);
             tabExpParamPanelS3D.setLayout(layout0);
             tabExpParamPanelS3D.add(jbtnBackHome_en_3);
             tabExpParamPanelS3D.add(jbtnBack_en_3);
-            tabExpParamPanelS3D.setBorder(BorderFactory.createEmptyBorder(0,
-                    10, 0, 10));
+            tabExpParamPanelS3D.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
 
-            BoxLayout layout1 = new BoxLayout(tabExpParamPanel,
-                    BoxLayout.Y_AXIS);
+            BoxLayout layout1 = new BoxLayout(tabExpParamPanel, BoxLayout.Y_AXIS);
             tabExpParamPanel.setLayout(layout1);
             tabExpParamPanel.add(tabExpParamPanelS3U);
             tabExpParamPanel.add(tabExpParamPanelS3D);
@@ -831,57 +810,57 @@ public class DataMigrationTool extends JFrame {
         }
 
         switch (paramError) {
-        case PARAM_ERROR_URL:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("数据库地址格式不正确！", "用户参数检查提示", 0);
-                }
-            });
-            break;
-        case PARAM_ERROR_USER:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("用户名不能为空！", "用户参数检查提示", 0);
-                }
-            });
-            break;
-        case PARAM_ERROR_EXPPATH:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("文件夹不存在或者创建失败！", "用户参数检查提示", 0);
-                }
-            });
-            break;
-        case PARAM_ERROR_STARTTIME:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("起始时间格式不正确！", "用户参数检查提示", 0);
-                }
-            });
-            break;
-        case PARAM_ERROR_ENDTIME:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("终止时间格式不正确！", "用户参数检查提示", 0);
-                }
-            });
-            break;
-        case PARAM_ERROR_CONN:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("不能连接数据库，请查看连接参数或网络状况！", "用户参数检查提示", 0);
-                }
-            });
-            break;
-        case PARAM_PASS:
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    DialogUtil.message("参数检查通过，且数据库连接成功！", "用户参数检查提示", 1);
-                }
-            });
-            return true;
-        default:
-            break;
+            case PARAM_ERROR_URL:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("数据库地址格式不正确！", "用户参数检查提示", 0);
+                    }
+                });
+                break;
+            case PARAM_ERROR_USER:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("用户名不能为空！", "用户参数检查提示", 0);
+                    }
+                });
+                break;
+            case PARAM_ERROR_EXPPATH:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("文件夹不存在或者创建失败！", "用户参数检查提示", 0);
+                    }
+                });
+                break;
+            case PARAM_ERROR_STARTTIME:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("起始时间格式不正确！", "用户参数检查提示", 0);
+                    }
+                });
+                break;
+            case PARAM_ERROR_ENDTIME:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("终止时间格式不正确！", "用户参数检查提示", 0);
+                    }
+                });
+                break;
+            case PARAM_ERROR_CONN:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("不能连接数据库，请查看连接参数或网络状况！", "用户参数检查提示", 0);
+                    }
+                });
+                break;
+            case PARAM_PASS:
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                        DialogUtil.message("参数检查通过，且数据库连接成功！", "用户参数检查提示", 1);
+                    }
+                });
+                return true;
+            default:
+                break;
         }
         return false;
 
@@ -902,8 +881,7 @@ public class DataMigrationTool extends JFrame {
         // 每次调用连接方法时，首先清空JTable
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                DefaultTableModel tableModel = (DefaultTableModel) jt
-                        .getModel();
+                DefaultTableModel tableModel = (DefaultTableModel) jt.getModel();
                 tableModel.setRowCount(0);
                 jt.revalidate();
             }
@@ -918,16 +896,15 @@ public class DataMigrationTool extends JFrame {
         List<DataValue> dataValuesNormalList = DatabaseUtil.fetchNormalTables();
         Map<String, Long> dataValuesNormalMap = Maps.newHashMap();
         for (DataValue dataValue : dataValuesNormalList) {
-            dataValuesNormalMap.put(dataValue.getTableName(),
-                    dataValue.getTableBytes());
+            dataValuesNormalMap.put(dataValue.getTableName(), dataValue.getTableBytes());
         }
         List<String> stringNormalList = new ArrayList<String>();
         for (int i = 0; i < dataValuesNormalList.size(); i++) {
             String tableName = dataValuesNormalList.get(i).getTableName();
             if (Conf4Exp.MAXBYTE > 0
                     && dataValuesNormalList.get(i).getTableBytes() >= Conf4Exp.MAXBYTE) {
-                expParamList.add(new TmpExpData("普通表_大容量表", tableName,
-                        dataValuesNormalList.get(i).getTableBytes()));
+                expParamList.add(new TmpExpData("普通表_大容量表", tableName, dataValuesNormalList.get(i)
+                        .getTableBytes()));
                 continue;
             }
             stringNormalList.add(tableName);
@@ -937,15 +914,14 @@ public class DataMigrationTool extends JFrame {
             Collections.sort(stringNormalList);
             // 为了避免过多的表名导致导入导出语句过长，如果有过多的表则分开处理
             // 设置表名最长的长度
-            List<List<String>> parList = Lists.partition(stringNormalList,
-                    Conf.TABLESNUM);
+            List<List<String>> parList = Lists.partition(stringNormalList, Conf.TABLESNUM);
             for (int i = 0; i < parList.size(); i++) {
                 Long bytesCount = 0l;
                 for (String tableName : parList.get(i)) {
                     bytesCount += dataValuesNormalMap.get(tableName);
                 }
-                expParamList.add(new TmpExpData("普通表" + i, StringUtils.join(
-                        parList.get(i), ","), bytesCount));
+                expParamList.add(new TmpExpData("普通表" + i, StringUtils.join(parList.get(i), ","),
+                        bytesCount));
             }
         }
 
@@ -953,16 +929,15 @@ public class DataMigrationTool extends JFrame {
         List<DataValue> dataValuesLobList = DatabaseUtil.fetchLobTables();
         Map<String, Long> dataValuesLobMap = Maps.newHashMap();
         for (DataValue dataValue : dataValuesLobList) {
-            dataValuesLobMap.put(dataValue.getTableName(),
-                    dataValue.getTableBytes());
+            dataValuesLobMap.put(dataValue.getTableName(), dataValue.getTableBytes());
         }
         List<String> stringLobList = new ArrayList<String>();
         for (int i = 0; i < dataValuesLobList.size(); i++) {
             String tableName = dataValuesLobList.get(i).getTableName();
             if (Conf4Exp.MAXBYTE > 0
                     && dataValuesLobList.get(i).getTableBytes() >= Conf4Exp.MAXBYTE) {
-                expParamList.add(new TmpExpData("大对象表_大容量表", tableName,
-                        dataValuesLobList.get(i).getTableBytes()));
+                expParamList.add(new TmpExpData("大对象表_大容量表", tableName, dataValuesLobList.get(i)
+                        .getTableBytes()));
                 continue;
             }
             stringLobList.add(tableName);
@@ -972,22 +947,20 @@ public class DataMigrationTool extends JFrame {
             Collections.sort(stringLobList);
             // 为了避免过多的表名导致导入导出语句过长，如果有过多的表则分开处理
             // 设置表名最长的长度
-            List<List<String>> parList = Lists.partition(stringLobList,
-                    Conf.TABLESNUM);
+            List<List<String>> parList = Lists.partition(stringLobList, Conf.TABLESNUM);
             for (int i = 0; i < parList.size(); i++) {
                 Long bytesCount = 0l;
                 for (String tableName : parList.get(i)) {
                     bytesCount += dataValuesLobMap.get(tableName);
                 }
-                expParamList.add(new TmpExpData("大对象表" + i, StringUtils.join(
-                        parList.get(i), ","), bytesCount));
+                expParamList.add(new TmpExpData("大对象表" + i, StringUtils.join(parList.get(i), ","),
+                        bytesCount));
             }
         }
 
         // 获取并处理分区表
         List<DataValue> dataValuesParList = DatabaseUtil.fetchParTables();
-        Map<String, LinkedHashMap<String, Long>> dataValuesParMap = Maps
-                .newLinkedHashMap();
+        Map<String, LinkedHashMap<String, Long>> dataValuesParMap = Maps.newLinkedHashMap();
         for (DataValue dataValue : dataValuesParList) {
             LinkedHashMap<String, Long> tmpMap = null;
             if (dataValuesParMap.containsKey(dataValue.getTableName())) {
@@ -998,17 +971,16 @@ public class DataMigrationTool extends JFrame {
             }
             tmpMap.put(dataValue.getParName(), dataValue.getTableBytes());
         }
-        
-        //建立一个list专门来存储按月分区表，一旦分区的数目超出了设定的值便向expParamList中存储一次
-        List<String> parMonthList =Lists.newArrayList();
-        Map<String,Long> parMonthMap =Maps.newHashMap();
-        
-        //建立一个list专门来存储按年分区表，一旦分区的数目超出了设定的值便向expParamList中存储一次
-        List<String> parYearList =Lists.newArrayList();
-        Map<String,Long> parYearMap =Maps.newHashMap();
-        
-        for (Entry<String, LinkedHashMap<String, Long>> entry : dataValuesParMap
-                .entrySet()) {
+
+        // 建立一个list专门来存储按月分区表，一旦分区的数目超出了设定的值便向expParamList中存储一次
+        List<String> parMonthList = Lists.newArrayList();
+        Map<String, Long> parMonthMap = Maps.newHashMap();
+
+        // 建立一个list专门来存储按年分区表，一旦分区的数目超出了设定的值便向expParamList中存储一次
+        List<String> parYearList = Lists.newArrayList();
+        Map<String, Long> parYearMap = Maps.newHashMap();
+
+        for (Entry<String, LinkedHashMap<String, Long>> entry : dataValuesParMap.entrySet()) {
             // 过滤有效的分区
             Map<String, Long> valueMap = entry.getValue();
             // 显示过滤后的分区字段结果
@@ -1024,19 +996,16 @@ public class DataMigrationTool extends JFrame {
             boolean isNull = true;
 
             for (Entry<String, Long> entry1 : valueMap.entrySet()) {
-            	parType = 0;
+                parType = 0;
                 // 验证分区前缀
                 if (!entry1.getKey().startsWith("PAR")) {
                     parName += "_" + entry1.getKey() + "分区名格式错误";
                 }
-                String timeString = entry1.getKey().substring(3);             
+                String timeString = entry1.getKey().substring(3);
                 // 第一次验证成功后，即定义分区类型，便于后期对于导入导出语句文件数量和语句长度的调整。
-                DateTimeFormatter formatDate = DateTimeFormat
-                        .forPattern("yyyyMMdd");
-                DateTimeFormatter formatMonth = DateTimeFormat
-                        .forPattern("yyyyMM");
-                DateTimeFormatter formatYear = DateTimeFormat
-                        .forPattern("yyyy");
+                DateTimeFormatter formatDate = DateTimeFormat.forPattern("yyyyMMdd");
+                DateTimeFormatter formatMonth = DateTimeFormat.forPattern("yyyyMM");
+                DateTimeFormatter formatYear = DateTimeFormat.forPattern("yyyy");
                 DateTime dateTime = null;
                 if (parType == 0) {
                     try {
@@ -1047,39 +1016,32 @@ public class DataMigrationTool extends JFrame {
                             dateTime = DateTime.parse(timeString, formatDate);
                             parType = 2;
                         } catch (Exception e1) {
-                        	try {
+                            try {
                                 dateTime = DateTime.parse(timeString, formatYear);
                                 parType = 3;
                             } catch (Exception e2) {
-                                System.out.println("输入格式错误!请重新输入."+timeString);
+                                System.out.println("输入格式错误!请重新输入." + timeString);
                             }
                         }
                     }
                 }
                 /*
-                else if (parType == 1) {
-                    dateTime = DateTime.parse(timeString, formatMonth);
-                } else if (parType == 2) {
-                    dateTime = DateTime.parse(timeString, formatDate);
-                } else if (parType == 3){
-                	dateTime = DateTime.parse(timeString, formatYear);
-                }
-                */
+                 * else if (parType == 1) { dateTime = DateTime.parse(timeString, formatMonth); }
+                 * else if (parType == 2) { dateTime = DateTime.parse(timeString, formatDate); }
+                 * else if (parType == 3){ dateTime = DateTime.parse(timeString, formatYear); }
+                 */
                 // 按月分区的分区表需要合并
                 if (parType == 1) {
                     try {
                         if ((!dateTime.toDate().before(
-                                DateUtils.parseDate(Conf4Exp.STARTMONTH,
-                                        new String[] { "yyyy-MM" })))
+                                DateUtils.parseDate(Conf4Exp.STARTMONTH, new String[] {"yyyy-MM"})))
                                 && dateTime.toDate().before(
                                         DateUtils.parseDate(Conf4Exp.ENDMONTH,
-                                                new String[] { "yyyy-MM" }))) {
-                            tableParName.add(entry.getKey() + ":"
-                                    + entry1.getKey());
-                            parMonthList.add(entry.getKey() + ":"
-                                    + entry1.getKey());
-                            parMonthMap.put(entry.getKey() + ":"
-                                    + entry1.getKey(), entry1.getValue());
+                                                new String[] {"yyyy-MM"}))) {
+                            tableParName.add(entry.getKey() + ":" + entry1.getKey());
+                            parMonthList.add(entry.getKey() + ":" + entry1.getKey());
+                            parMonthMap.put(entry.getKey() + ":" + entry1.getKey(),
+                                    entry1.getValue());
                             bytesCount += entry1.getValue();
                             sum++;
                         }
@@ -1087,7 +1049,7 @@ public class DataMigrationTool extends JFrame {
                         parName += "_" + entry1.getKey() + "不能解析此分区";
                         e.printStackTrace();
                     }
-                    
+
                     // 如果表的容量比较大，就不要合并了，判断依据是各个分区的容量大小和是否超出了设置的最大容量
                     // if (bytesCount > Conf4Exp.MAXBYTE) {
                     // Collections.sort(tableParName);
@@ -1099,14 +1061,13 @@ public class DataMigrationTool extends JFrame {
                 }
                 if (parType == 2) {
                     try {
-                        if ((!dateTime.toDate().before(
-                                DateUtils.parseDate(Conf4Exp.STARTDATE,
-                                        new String[] { "yyyy-MM-dd" })))
+                        if ((!dateTime.toDate()
+                                .before(DateUtils.parseDate(Conf4Exp.STARTDATE,
+                                        new String[] {"yyyy-MM-dd"})))
                                 && dateTime.toDate().before(
                                         DateUtils.parseDate(Conf4Exp.ENDDATE,
-                                                new String[] { "yyyy-MM-dd" }))) {
-                            tableParName.add(entry.getKey() + ":"
-                                    + entry1.getKey());
+                                                new String[] {"yyyy-MM-dd"}))) {
+                            tableParName.add(entry.getKey() + ":" + entry1.getKey());
                             bytesCount += entry1.getValue();
                             sum++;
                         }
@@ -1119,17 +1080,14 @@ public class DataMigrationTool extends JFrame {
                 if (parType == 3) {
                     try {
                         if ((!dateTime.toDate().before(
-                                DateUtils.parseDate(Conf4Exp.STARTYEAR,
-                                        new String[] { "yyyy" })))
-                                && dateTime.toDate().before(
-                                        DateUtils.parseDate(Conf4Exp.ENDYEAR,
-                                                new String[] { "yyyy" }))) {
-                            tableParName.add(entry.getKey() + ":"
-                                    + entry1.getKey());
-                            parYearList.add(entry.getKey() + ":"
-                                    + entry1.getKey());
-                            parYearMap.put(entry.getKey() + ":"
-                                    + entry1.getKey(), entry1.getValue());
+                                DateUtils.parseDate(Conf4Exp.STARTYEAR, new String[] {"yyyy"})))
+                                && dateTime.toDate()
+                                        .before(DateUtils.parseDate(Conf4Exp.ENDYEAR,
+                                                new String[] {"yyyy"}))) {
+                            tableParName.add(entry.getKey() + ":" + entry1.getKey());
+                            parYearList.add(entry.getKey() + ":" + entry1.getKey());
+                            parYearMap.put(entry.getKey() + ":" + entry1.getKey(),
+                                    entry1.getValue());
                             bytesCount += entry1.getValue();
                             sum++;
                         }
@@ -1137,7 +1095,7 @@ public class DataMigrationTool extends JFrame {
                         parName += "_" + entry1.getKey() + "不能解析此分区";
                         e.printStackTrace();
                     }
-                    
+
                     // 如果表的容量比较大，就不要合并了，判断依据是各个分区的容量大小和是否超出了设置的最大容量
                     // if (bytesCount > Conf4Exp.MAXBYTE) {
                     // Collections.sort(tableParName);
@@ -1150,61 +1108,59 @@ public class DataMigrationTool extends JFrame {
 
                 if (sum >= Conf.TABLESNUM) {
                     Collections.sort(tableParName);
-                    expParamList.add(new TmpExpData(parName + "_" + endName,
-                            StringUtils.join(tableParName, ","), bytesCount));
+                    expParamList.add(new TmpExpData(parName + "_" + endName, StringUtils.join(
+                            tableParName, ","), bytesCount));
                     endName++;
                     sum = 0;
                     tableParName.clear();
                     bytesCount = 0l;
                     isNull = false;
                 }
-                
+
             }
             // parName +="_"+parType;
             if (tableParName.size() == 0 && isNull == true) {
                 tableParName.add(entry.getKey());
             }
-            if(parType == 1){
+            if (parType == 1) {
                 continue;
             }
             Collections.sort(tableParName);
 
-            expParamList.add(new TmpExpData(parName + "_" + endName,
-                    StringUtils.join(tableParName, ","), bytesCount));
+            expParamList.add(new TmpExpData(parName + "_" + endName, StringUtils.join(tableParName,
+                    ","), bytesCount));
         }
-        //处理按月分区表
+        // 处理按月分区表
         if (parMonthList.size() > 0) {
             // 为了避免过多的表名导致导入导出语句过长，如果有过多的表则分开处理
             // 设置表名最长的长度
-            List<List<String>> parList = Lists.partition(parMonthList,
-                    Conf.TABLESNUM);
+            List<List<String>> parList = Lists.partition(parMonthList, Conf.TABLESNUM);
             for (int i = 0; i < parList.size(); i++) {
                 Long bytesCount = 0l;
                 for (String tableName : parList.get(i)) {
                     bytesCount += parMonthMap.get(tableName);
                 }
-                expParamList.add(new TmpExpData("分区表_月分区" + i, StringUtils.join(
-                        parList.get(i), ","), bytesCount));
+                expParamList.add(new TmpExpData("分区表_月分区" + i,
+                        StringUtils.join(parList.get(i), ","), bytesCount));
             }
         }
-        
-        
-      //处理按年分区表
+
+
+        // 处理按年分区表
         if (parYearList.size() > 0) {
             // 为了避免过多的表名导致导入导出语句过长，如果有过多的表则分开处理
             // 设置表名最长的长度
-            List<List<String>> parList = Lists.partition(parYearList,
-                    Conf.TABLESNUM);
+            List<List<String>> parList = Lists.partition(parYearList, Conf.TABLESNUM);
             for (int i = 0; i < parList.size(); i++) {
                 Long bytesCount = 0l;
                 for (String tableName : parList.get(i)) {
                     bytesCount += parYearMap.get(tableName);
                 }
-                expParamList.add(new TmpExpData("分区表_年分区" + i, StringUtils.join(
-                        parList.get(i), ","), bytesCount));
+                expParamList.add(new TmpExpData("分区表_年分区" + i,
+                        StringUtils.join(parList.get(i), ","), bytesCount));
             }
         }
-        
+
 
         // 按行依次向图像中添加表
         final DefaultTableModel jtm = (DefaultTableModel) jt.getModel();
@@ -1221,8 +1177,8 @@ public class DataMigrationTool extends JFrame {
                     Long bytes = tmpExpData.getBytes();
                     String bytes1 = TransferSizeUtil.Long2Str(bytes);
 
-                    jtm.addRow(new Object[] { tmpExpData.getType(),
-                            tmpExpData.getTableName(), bytes1, "导出" });
+                    jtm.addRow(new Object[] {tmpExpData.getType(), tmpExpData.getTableName(),
+                            bytes1, "导出"});
                     jt.setOpaque(true);
                     // 注入渲染器
                     jt.getColumn(tableHeadStr[0]).setCellRenderer(cellRenderer);
@@ -1245,8 +1201,7 @@ public class DataMigrationTool extends JFrame {
                 jt.revalidate();
             }
         });
-        final ButtonRendererListenerImp renderer = new ButtonRendererListenerImp(
-                jtImp);
+        final ButtonRendererListenerImp renderer = new ButtonRendererListenerImp(jtImp);
         final CellRendererImp cellRenderer = new CellRendererImp(jtImp);
         MouseListener[] mlArr = jtImp.getMouseListeners();
         if (mlArr.length == 2)
@@ -1254,16 +1209,12 @@ public class DataMigrationTool extends JFrame {
         for (final Entry<String, String> entryMap : rowMap.entrySet()) {
             SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                    jtm.addRow(new Object[] { entryMap.getValue(),
-                            entryMap.getKey(), "导入" });
+                    jtm.addRow(new Object[] {entryMap.getValue(), entryMap.getKey(), "导入"});
                     jtImp.setOpaque(true);
                     // 注入渲染器
-                    jtImp.getColumn(tableHeadImpStr[0]).setCellRenderer(
-                            cellRenderer);
-                    jtImp.getColumn(tableHeadImpStr[1]).setCellRenderer(
-                            cellRenderer);
-                    jtImp.getColumn(tableHeadImpStr[2]).setCellRenderer(
-                            renderer);
+                    jtImp.getColumn(tableHeadImpStr[0]).setCellRenderer(cellRenderer);
+                    jtImp.getColumn(tableHeadImpStr[1]).setCellRenderer(cellRenderer);
+                    jtImp.getColumn(tableHeadImpStr[2]).setCellRenderer(renderer);
                     jtImp.revalidate();
                 }
             });
@@ -1286,13 +1237,11 @@ public class DataMigrationTool extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            BeanUtil.save2expPanel1(textExpAddr.getText(),
-                    textExpUserId.getText(), textExpFile.getText(),
-                    textExpLog.getText(), textExpBat.getText(),
+            BeanUtil.save2expPanel1(textExpAddr.getText(), textExpUserId.getText(),
+                    textExpFile.getText(), textExpLog.getText(), textExpBat.getText(),
                     textExpMaxSize.getText(), textExpStartMonth.getText(),
                     textExpEndMonth.getText(), textExpStartDate.getText(),
-                    textExpEndDate.getText(),textExpStartYear.getText(),
-                    textExpEndYear.getText());
+                    textExpEndDate.getText(), textExpStartYear.getText(), textExpEndYear.getText());
 
             getTabExpParamJPanel(2);
             SwingUtilities.invokeLater(new Runnable() {
@@ -1309,9 +1258,8 @@ public class DataMigrationTool extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            BeanUtil.save2impPanel1(textImpAddr.getText(),
-                    textImpUserId.getText(), textImpLog.getText(),
-                    textImpBat.getText());
+            BeanUtil.save2impPanel1(textImpAddr.getText(), textImpUserId.getText(),
+                    textImpLog.getText(), textImpBat.getText());
 
             getTabImpParamJPanel(2);
             SwingUtilities.invokeLater(new Runnable() {
@@ -1338,33 +1286,27 @@ public class DataMigrationTool extends JFrame {
         }
 
         @Override
-        public void mousePressed(MouseEvent e) {
-        }
+        public void mousePressed(MouseEvent e) {}
 
         @Override
-        public void mouseReleased(MouseEvent e) {
-        }
+        public void mouseReleased(MouseEvent e) {}
 
         @Override
-        public void mouseEntered(MouseEvent e) {
-        }
+        public void mouseEntered(MouseEvent e) {}
 
         @Override
-        public void mouseExited(MouseEvent e) {
-        }
+        public void mouseExited(MouseEvent e) {}
     }
 
     class Jbtn_en_1_ConnTestListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            BeanUtil.save2expPanel1(textExpAddr.getText(),
-                    textExpUserId.getText(), textExpFile.getText(),
-                    textExpLog.getText(), textExpBat.getText(),
+            BeanUtil.save2expPanel1(textExpAddr.getText(), textExpUserId.getText(),
+                    textExpFile.getText(), textExpLog.getText(), textExpBat.getText(),
                     textExpMaxSize.getText(), textExpStartMonth.getText(),
                     textExpEndMonth.getText(), textExpStartDate.getText(),
-                    textExpEndDate.getText(),textExpStartYear.getText(),
-                    textExpEndYear.getText());
+                    textExpEndDate.getText(), textExpStartYear.getText(), textExpEndYear.getText());
             validateParam(true, 2);
         }
     }
@@ -1373,9 +1315,8 @@ public class DataMigrationTool extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            BeanUtil.save2impPanel1(textImpAddr.getText(),
-                    textImpUserId.getText(), textExpLog.getText(),
-                    textExpBat.getText());
+            BeanUtil.save2impPanel1(textImpAddr.getText(), textImpUserId.getText(),
+                    textExpLog.getText(), textExpBat.getText());
             validateParam(false, 2);
         }
     }
@@ -1488,13 +1429,11 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            BeanUtil.persistent2expPanel1(textExpAddr.getText(),
-                    textExpUserId.getText(), textExpFile.getText(),
-                    textExpLog.getText(), textExpBat.getText(),
+            BeanUtil.persistent2expPanel1(textExpAddr.getText(), textExpUserId.getText(),
+                    textExpFile.getText(), textExpLog.getText(), textExpBat.getText(),
                     textExpMaxSize.getText(), textExpStartMonth.getText(),
                     textExpEndMonth.getText(), textExpStartDate.getText(),
-                    textExpEndDate.getText(),textExpStartYear.getText(),
-                    textExpEndYear.getText());
+                    textExpEndDate.getText(), textExpStartYear.getText(), textExpEndYear.getText());
         }
     }
 
@@ -1503,9 +1442,8 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            BeanUtil.persistent2impPanel1(textImpAddr.getText(),
-                    textImpUserId.getText(), textImpLog.getText(),
-                    textImpBat.getText());
+            BeanUtil.persistent2impPanel1(textImpAddr.getText(), textImpUserId.getText(),
+                    textImpLog.getText(), textImpBat.getText());
         }
     }
 
@@ -1601,7 +1539,7 @@ public class DataMigrationTool extends JFrame {
             chooser.setAcceptAllFileFilterUsed(false);
             if (chooser.showOpenDialog(DataMigrationTool.this) == JFileChooser.APPROVE_OPTION) {
                 File f = FileUtils.getFile(chooser.getSelectedFile());
-                String[] str = { "dmp" };
+                String[] str = {"dmp"};
                 Collection<File> fileList = FileUtils.listFiles(f, str, false);
                 Map<String, String> fileMap = Maps.newHashMap();
                 for (File file : fileList) {
@@ -1627,8 +1565,10 @@ public class DataMigrationTool extends JFrame {
     class JmiContactListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            DialogUtil.message("Bug反馈邮箱：nuptaxin@gmail.com\n网址：www.renix.org\n内网下载地址：192.1.1.56/resource/dmt-oracle\n源码地址：https://github.com/nuptaxin/dmt-oracle",
-                    "联系我们", -1);
+            DialogUtil
+                    .message(
+                            "Bug反馈邮箱：nuptaxin@gmail.com\n网址：www.renix.org\n内网下载地址：192.1.1.56/resource/dmt-oracle\n源码地址：https://github.com/nuptaxin/dmt-oracle",
+                            "联系我们", -1);
         }
     }
 
@@ -1662,9 +1602,8 @@ public class DataMigrationTool extends JFrame {
             for (int i = 0; i < jtm.getRowCount(); i++) {
                 LOGGER.info(jtm.getValueAt(i, 0));
                 LOGGER.info(jtm.getValueAt(i, 1));
-                ButtonRendererListener.parseRow(
-                        jtm.getValueAt(i, 0).toString(), jtm.getValueAt(i, 1)
-                                .toString(), jtm.getValueAt(i, 2).toString());
+                ButtonRendererListener.parseRow(jtm.getValueAt(i, 0).toString(),
+                        jtm.getValueAt(i, 1).toString(), jtm.getValueAt(i, 2).toString());
             }
 
         }
@@ -1681,8 +1620,8 @@ public class DataMigrationTool extends JFrame {
             for (int i = 0; i < jtm.getRowCount(); i++) {
                 LOGGER.info(jtm.getValueAt(i, 0));
                 LOGGER.info(jtm.getValueAt(i, 1));
-                ButtonRendererListenerImp.parseRow(jtm.getValueAt(i, 1)
-                        .toString(), jtm.getValueAt(i, 0).toString());
+                ButtonRendererListenerImp.parseRow(jtm.getValueAt(i, 1).toString(),
+                        jtm.getValueAt(i, 0).toString());
             }
 
         }
@@ -1729,8 +1668,7 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             JCheckBox j = (JCheckBox) e.getSource();
-            System.out.println(j.getName() + "-" + j.getText() + "-"
-                    + j.isSelected());
+            System.out.println(j.getName() + "-" + j.getText() + "-" + j.isSelected());
             for (Field field : f) {
                 if (field.getName().equalsIgnoreCase("COMPRESS")) {
                     Conf4Exp.COMPRESS = j.isSelected() ? "Y" : "N";
@@ -1826,9 +1764,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void insertUpdate(DocumentEvent e) {
             try {
-                Conf4Exp.OTHER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Exp.OTHER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1837,9 +1775,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void removeUpdate(DocumentEvent e) {
             try {
-                Conf4Exp.OTHER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Exp.OTHER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1848,9 +1786,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void changedUpdate(DocumentEvent e) {
             try {
-                Conf4Exp.OTHER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Exp.OTHER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1862,9 +1800,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void insertUpdate(DocumentEvent e) {
             try {
-                Conf4Exp.BUFFER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Exp.BUFFER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1873,9 +1811,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void removeUpdate(DocumentEvent e) {
             try {
-                Conf4Exp.BUFFER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Exp.BUFFER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1884,9 +1822,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void changedUpdate(DocumentEvent e) {
             try {
-                Conf4Exp.BUFFER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Exp.BUFFER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1898,9 +1836,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void insertUpdate(DocumentEvent e) {
             try {
-                Conf4Imp.OTHER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Imp.OTHER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1909,9 +1847,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void removeUpdate(DocumentEvent e) {
             try {
-                Conf4Imp.OTHER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Imp.OTHER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1920,9 +1858,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void changedUpdate(DocumentEvent e) {
             try {
-                Conf4Imp.OTHER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Imp.OTHER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1934,9 +1872,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void insertUpdate(DocumentEvent e) {
             try {
-                Conf4Imp.BUFFER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Imp.BUFFER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1945,9 +1883,9 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void removeUpdate(DocumentEvent e) {
             try {
-                Conf4Imp.BUFFER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Imp.BUFFER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
@@ -1956,17 +1894,16 @@ public class DataMigrationTool extends JFrame {
         @Override
         public void changedUpdate(DocumentEvent e) {
             try {
-                Conf4Imp.BUFFER = e.getDocument().getText(
-                        e.getDocument().getStartPosition().getOffset(),
-                        e.getDocument().getLength());
+                Conf4Imp.BUFFER =
+                        e.getDocument().getText(e.getDocument().getStartPosition().getOffset(),
+                                e.getDocument().getLength());
             } catch (BadLocationException e1) {
                 e1.printStackTrace();
             }
         }
     }
 
-    public static void main(String[] args) throws InterruptedException,
-            IOException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         PropertyConfigurator.configure("conf/log4j.properties");
         ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         DisplayJFrame.runJFrame(new DataMigrationTool(), expToolName, 800, 600);

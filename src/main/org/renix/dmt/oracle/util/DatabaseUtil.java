@@ -11,6 +11,10 @@ import org.renix.dmt.oracle.DataMigrationTool;
 import org.renix.dmt.oracle.bean.DataValue;
 import org.sql2o.Sql2o;
 
+/**
+ * @author renzx
+ *
+ */
 public class DatabaseUtil {
     private static Logger LOGGER = Logger.getLogger(DatabaseUtil.class);
     private static Sql2o sql2o;
@@ -32,11 +36,12 @@ public class DatabaseUtil {
      * @return
      */
     public static void AllocateExtent() {
-        String sql = "select 'alter table '||table_name||' allocate extent' "
-                + "from user_tables t where t.PARTITIONED ='NO' and "
-                + "t.num_rows=0 and t.TABLE_NAME not in "
-                + "(select t1.segment_name from USER_SEGMENTS t1) and "
-                + "t.TABLE_NAME not like '%test%'";
+        String sql =
+                "select 'alter table '||table_name||' allocate extent' "
+                        + "from user_tables t where t.PARTITIONED ='NO' and "
+                        + "t.num_rows=0 and t.TABLE_NAME not in "
+                        + "(select t1.segment_name from USER_SEGMENTS t1) and "
+                        + "t.TABLE_NAME not like '%test%'";
         List<String> strList = sql2o.createQuery(sql).executeScalarList();
         for (String string : strList) {
             sql2o.createQuery(string).executeUpdate();
@@ -44,26 +49,26 @@ public class DatabaseUtil {
     }
 
     public static List<DataValue> fetchNormalTables() {
-        String sql = "select t.TABLE_NAME as TABLENAME, t1.BYTES as TABLEBYTES from USER_TABLES t,USER_SEGMENTS t1 "
-                + "where t.PARTITIONED ='NO' and t.TABLE_NAME=t1.SEGMENT_NAME "
-                + "and t.TABLE_NAME not in (select t3.TABLE_NAME from USER_LOBS t3)";
-        List<DataValue> dataValueList = sql2o.createQuery(sql).executeAndFetch(
-                DataValue.class);
+        String sql =
+                "select t.TABLE_NAME as TABLENAME, t1.BYTES as TABLEBYTES from USER_TABLES t,USER_SEGMENTS t1 "
+                        + "where t.PARTITIONED ='NO' and t.TABLE_NAME=t1.SEGMENT_NAME "
+                        + "and t.TABLE_NAME not in (select t3.TABLE_NAME from USER_LOBS t3)";
+        List<DataValue> dataValueList = sql2o.createQuery(sql).executeAndFetch(DataValue.class);
         return dataValueList;
     }
 
     public static List<DataValue> fetchLobTables() {
-        String sql = "select t.TABLE_NAME as TABLENAME, t1.BYTES as TABLEBYTES from USER_LOBS t, USER_SEGMENTS t1 "
-                + "where t.SEGMENT_NAME = t1.SEGMENT_NAME";
-        List<DataValue> dataValueList = sql2o.createQuery(sql).executeAndFetch(
-                DataValue.class);
+        String sql =
+                "select t.TABLE_NAME as TABLENAME, t1.BYTES as TABLEBYTES from USER_LOBS t, USER_SEGMENTS t1 "
+                        + "where t.SEGMENT_NAME = t1.SEGMENT_NAME";
+        List<DataValue> dataValueList = sql2o.createQuery(sql).executeAndFetch(DataValue.class);
         return dataValueList;
     }
 
     public static List<DataValue> fetchParTables() {
-        String sql = "select t.SEGMENT_NAME as TABLENAME, t.PARTITION_NAME as PARNAME, t.BYTES as TABLEBYTES from USER_SEGMENTS t where t.SEGMENT_TYPE = 'TABLE PARTITION' order by t.SEGMENT_NAME,t.PARTITION_NAME";
-        List<DataValue> dataValueList = sql2o.createQuery(sql).executeAndFetch(
-                DataValue.class);
+        String sql =
+                "select t.SEGMENT_NAME as TABLENAME, t.PARTITION_NAME as PARNAME, t.BYTES as TABLEBYTES from USER_SEGMENTS t where t.SEGMENT_TYPE = 'TABLE PARTITION' order by t.SEGMENT_NAME,t.PARTITION_NAME";
+        List<DataValue> dataValueList = sql2o.createQuery(sql).executeAndFetch(DataValue.class);
         return dataValueList;
     }
 
@@ -96,8 +101,7 @@ public class DatabaseUtil {
             LOGGER.warn("关闭从Spring获取的数据源时出现异常！", e);
         }
         String[] strArray = StringUtils.split(url, "/");
-        dataSource.setUrl("jdbc:oracle:thin:@" + strArray[0] + ":"
-                + strArray[1]);
+        dataSource.setUrl("jdbc:oracle:thin:@" + strArray[0] + ":" + strArray[1]);
         String[] strArray1 = StringUtils.split(userId, "/");
         dataSource.setUsername(strArray1[0]);
         dataSource.setPassword(strArray1[1]);

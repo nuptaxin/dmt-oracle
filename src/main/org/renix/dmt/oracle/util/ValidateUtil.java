@@ -8,6 +8,10 @@ import org.renix.dmt.oracle.render.DirectoryUtil;
 
 import com.google.common.base.Strings;
 
+/**
+ * @author renzx
+ *
+ */
 public class ValidateUtil {
     public static ParamError validateParam(int mode) {
         // 数据库连接参数验证
@@ -24,9 +28,9 @@ public class ValidateUtil {
             if (!DirectoryUtil.checkDirectory(Conf4Exp.FILE)
                     || !DirectoryUtil.checkDirectory(Conf4Exp.LOG)
                     || !DirectoryUtil.checkDirectory(Conf4Exp.BAT)) {
-                int result = JOptionPane.showConfirmDialog(null, "是否创建文件夹"
-                        + Conf4Exp.FILE + "以及其子文件夹logs、data", "文件夹创建",
-                        JOptionPane.OK_CANCEL_OPTION);
+                int result =
+                        JOptionPane.showConfirmDialog(null, "是否创建文件夹" + Conf4Exp.FILE
+                                + "以及其子文件夹logs、data", "文件夹创建", JOptionPane.OK_CANCEL_OPTION);
                 if (result == 0) {
                     DirectoryUtil.makeDirectory(Conf4Exp.FILE);
                     DirectoryUtil.makeDirectory(Conf4Exp.LOG);
@@ -65,8 +69,9 @@ public class ValidateUtil {
             // 文件夹验证
             if (!DirectoryUtil.checkDirectory(Conf4Imp.LOG)
                     || !DirectoryUtil.checkDirectory(Conf4Imp.BAT)) {
-                int result = JOptionPane.showConfirmDialog(null, "是否创建文件夹",
-                        "文件夹创建", JOptionPane.OK_CANCEL_OPTION);
+                int result =
+                        JOptionPane.showConfirmDialog(null, "是否创建文件夹", "文件夹创建",
+                                JOptionPane.OK_CANCEL_OPTION);
                 if (result == 0) {
 
                     DirectoryUtil.makeDirectory(Conf4Imp.LOG);

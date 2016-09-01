@@ -1,6 +1,10 @@
 package org.renix.dmt.oracle.util;
 
 
+/**
+ * @author renzx
+ *
+ */
 public class BeanUtil {
 
     /**
@@ -15,10 +19,9 @@ public class BeanUtil {
      * @param expEndTime
      * @param expMaxSize
      */
-    public static void save2expPanel1(String addr, String userId, String file,
-            String log, String bat, String maxSize, String startMonth,
-            String endMonth, String startDate, String endDate,String startYear,
-            String endYear) {
+    public static void save2expPanel1(String addr, String userId, String file, String log,
+            String bat, String maxSize, String startMonth, String endMonth, String startDate,
+            String endDate, String startYear, String endYear) {
         Conf4Exp.ADDR = addr;
         Conf4Exp.USERID = userId;
         Conf4Exp.FILE = file;
@@ -32,19 +35,20 @@ public class BeanUtil {
         Conf4Exp.STARTYEAR = startYear;
         Conf4Exp.ENDYEAR = endYear;
     }
-    public static void save2impPanel1(String addr, String userId,
-            String log, String bat) {
+
+    public static void save2impPanel1(String addr, String userId, String log, String bat) {
         Conf4Imp.ADDR = addr;
         Conf4Imp.USERID = userId;
         Conf4Imp.LOG = log;
         Conf4Imp.BAT = bat;
-        
+
     }
 
-    public static void persistent2expPanel1(String addr, String userId,
-            String file, String log, String bat, String maxSize,
-            String startMonth, String endMonth, String startDate, String endDate, String startYear, String endYear) {
-        save2expPanel1(addr, userId, file, log, bat, maxSize, startMonth, endMonth, startDate, endDate,startYear, endYear);
+    public static void persistent2expPanel1(String addr, String userId, String file, String log,
+            String bat, String maxSize, String startMonth, String endMonth, String startDate,
+            String endDate, String startYear, String endYear) {
+        save2expPanel1(addr, userId, file, log, bat, maxSize, startMonth, endMonth, startDate,
+                endDate, startYear, endYear);
         Conf4Exp.getConfig().setProperty("ADDR", addr);
         Conf4Exp.getConfig().setProperty("USERID", userId);
         Conf4Exp.getConfig().setProperty("FILE", file);
@@ -59,14 +63,14 @@ public class BeanUtil {
         Conf4Exp.getConfig().setProperty("ENDYEAR", endYear);
 
     }
-    public static void persistent2impPanel1(String addr, String userId,
-            String log, String bat) {
+
+    public static void persistent2impPanel1(String addr, String userId, String log, String bat) {
         save2impPanel1(addr, userId, log, bat);
         Conf4Imp.getConfig().setProperty("ADDR", addr);
         Conf4Imp.getConfig().setProperty("USERID", userId);
         Conf4Imp.getConfig().setProperty("LOG", log);
         Conf4Imp.getConfig().setProperty("BAT", bat);
-        
+
     }
 
 

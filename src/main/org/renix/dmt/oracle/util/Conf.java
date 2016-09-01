@@ -4,6 +4,10 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
+/**
+ * @author renzx
+ *
+ */
 public class Conf {
     static Logger LOGGER = Logger.getLogger(Conf.class);
     static public Integer TABLESNUM = null;

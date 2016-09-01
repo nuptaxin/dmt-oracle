@@ -8,6 +8,10 @@ import javax.swing.JTextField;
 import javax.swing.JToolTip;
 import javax.swing.table.TableCellRenderer;
 
+/**
+ * @author renzx
+ *
+ */
 @SuppressWarnings("serial")
 public class CellRendererImp extends JTextField implements TableCellRenderer {
 
@@ -23,32 +27,32 @@ public class CellRendererImp extends JTextField implements TableCellRenderer {
     boolean isSelected, boolean hasFocus, int row, int column) {
 
         setBorder(null);
-        if (row%2==0){
-            setBackground(Color.LIGHT_GRAY );
+        if (row % 2 == 0) {
+            setBackground(Color.LIGHT_GRAY);
             setToolTipText((value == null) ? "" : value.toString());
-        }else{
+        } else {
             setBackground(null);
             setToolTipText((value == null) ? "" : value.toString());
         }
 
-        
+
         setText((value == null) ? "" : value.toString());
 
         return this;
 
     }
-    
-//    public void addToolTipBtnListener(ActionListener l) {  
-//        toolTipBtnListener = l;  
-//   }  
-    
-    public JToolTip createToolTip() {  
-        if (toolTip == null) {  
-             toolTip = new CellToolTip();  
-//             toolTip.getButton().addActionListener(toolTipBtnListener);  
-        }  
-         
-        return toolTip;  
-   }  
+
+    // public void addToolTipBtnListener(ActionListener l) {
+    // toolTipBtnListener = l;
+    // }
+
+    public JToolTip createToolTip() {
+        if (toolTip == null) {
+            toolTip = new CellToolTip();
+            // toolTip.getButton().addActionListener(toolTipBtnListener);
+        }
+
+        return toolTip;
+    }
 
 }

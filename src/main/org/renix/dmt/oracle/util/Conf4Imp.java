@@ -4,13 +4,17 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
+/**
+ * @author renzx
+ *
+ */
 public class Conf4Imp {
     static Logger LOGGER = Logger.getLogger(Conf4Imp.class);
     static public String ADDR = null;
     static public String USERID = null;
     static public String BAT = null;
     static public String LOG = null;
-    
+
     static public String BUFFER = null;
     static public String FULL = null;
     static public String GRANTS = null;
@@ -29,10 +33,10 @@ public class Conf4Imp {
         Conf4Imp.config = config;
     }
 
-    static{
+    static {
         initConf();
     }
-    
+
     public static void initConf() {
         config = new PropertiesConfiguration();
         config.setEncoding("UTF-8");
@@ -58,13 +62,14 @@ public class Conf4Imp {
         IGNORE = config.getString("IGNORE", "Y");
         OTHER = config.getString("OTHER", "");
     }
-    
+
     public static void reReadImp1() {
         ADDR = config.getString("ADDR", "127.0.0.1/orcl");
         USERID = config.getString("USERID", "CJDYFX/orcl");
         BAT = config.getString("BAT", "c:\\test\\bat");
         LOG = config.getString("LOG", "c:\\test\\log");
     }
+
     public static void reReadImp2() {
         BUFFER = config.getString("BUFFER", "819200000");
         FULL = config.getString("FULL", "Y");

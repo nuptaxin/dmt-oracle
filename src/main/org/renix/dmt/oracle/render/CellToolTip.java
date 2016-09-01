@@ -7,6 +7,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JTextPane;
 import javax.swing.JToolTip;
 
+/**
+ * @author renzx
+ *
+ */
 @SuppressWarnings("serial")
 public class CellToolTip extends JToolTip {
 

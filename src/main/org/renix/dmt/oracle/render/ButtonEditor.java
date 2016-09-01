@@ -13,6 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
 
+/**
+ * @author renzx
+ */
 @SuppressWarnings("serial")
 public class ButtonEditor extends DefaultCellEditor {
 
@@ -21,12 +24,11 @@ public class ButtonEditor extends DefaultCellEditor {
     private String label;
 
     private boolean isPushed;
-    
-    public ButtonEditor(JCheckBox checkBox, final String part,
-            final String table, final int rowNum) {
+
+    public ButtonEditor(JCheckBox checkBox, final String part, final String table, final int rowNum) {
 
         super(checkBox);
-        
+
         button = new JButton();
 
         button.setOpaque(true);
@@ -36,41 +38,41 @@ public class ButtonEditor extends DefaultCellEditor {
             public void actionPerformed(ActionEvent e) {
 
                 // fireEditingStopped();
-//                String path = expProp.getFile() + "/"
-//                        + expProp.getUserId() + "_" + part + "_"
-//                        + expProp.getStartDate() + "_"
-//                        + expProp.getEndDate();
-//                String str = "exp "
-//                        + expProp.getUserId()
-//                        + " "
-//                        + "file="
-//                        + path
-//                        + ".dmp log="
-//                        + path
-//                        + ".log buffer=819200000 tables=("
-//                        + table
-//                        + ") query=\"where "
-//                        + part
-//                        + ">=to_date("
-//                        + expProp.getStartDate()
-//                        + ",'yyyyMMdd-HHmmss') "
-//                        + "and "
-//                        + part
-//                        + "<to_date("
-//                        + expProp.getEndDate()
-//                        + ",'yyyyMMdd-HHmmss') "
-//                        + " \" "
-//                        + "compress=yes consistent=no grants=no indexes=yes rows=yes triggers=yes constraints=yes";
+                // String path = expProp.getFile() + "/"
+                // + expProp.getUserId() + "_" + part + "_"
+                // + expProp.getStartDate() + "_"
+                // + expProp.getEndDate();
+                // String str = "exp "
+                // + expProp.getUserId()
+                // + " "
+                // + "file="
+                // + path
+                // + ".dmp log="
+                // + path
+                // + ".log buffer=819200000 tables=("
+                // + table
+                // + ") query=\"where "
+                // + part
+                // + ">=to_date("
+                // + expProp.getStartDate()
+                // + ",'yyyyMMdd-HHmmss') "
+                // + "and "
+                // + part
+                // + "<to_date("
+                // + expProp.getEndDate()
+                // + ",'yyyyMMdd-HHmmss') "
+                // + " \" "
+                // +
+                // "compress=yes consistent=no grants=no indexes=yes rows=yes triggers=yes constraints=yes";
                 JTextPane jpt = new JTextPane();
-//                jpt.setText(str);
+                // jpt.setText(str);
                 JScrollPane jsp = new JScrollPane(jpt) {
                     @Override
                     public Dimension getPreferredSize() {
                         return new Dimension(480, 320);
                     }
                 };
-                JOptionPane.showMessageDialog(null, jsp, "haha",
-                        JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, jsp, "haha", JOptionPane.INFORMATION_MESSAGE);
 
             }
 
@@ -110,7 +112,7 @@ public class ButtonEditor extends DefaultCellEditor {
 
         if (isPushed) {
 
-//            JOptionPane.showMessageDialog(button, label + ": Ouch!");
+            // JOptionPane.showMessageDialog(button, label + ": Ouch!");
 
         }
 

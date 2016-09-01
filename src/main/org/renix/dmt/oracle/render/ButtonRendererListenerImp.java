@@ -17,9 +17,12 @@ import org.apache.log4j.Logger;
 import org.renix.dmt.oracle.util.CMDUtil;
 import org.renix.dmt.oracle.util.Conf4Imp;
 
+/**
+ * @author renzx
+ */
 @SuppressWarnings("serial")
-public class ButtonRendererListenerImp extends JButton implements
-        TableCellRenderer, MouseInputListener {
+public class ButtonRendererListenerImp extends JButton implements TableCellRenderer,
+        MouseInputListener {
 
     static Logger LOGGER = Logger.getLogger(ButtonChangeListener.class);
     // 当前监听的Table
@@ -61,24 +64,21 @@ public class ButtonRendererListenerImp extends JButton implements
      * 
      * @param e
      */
-    public void mouseExited(MouseEvent e) {
-    }
+    public void mouseExited(MouseEvent e) {}
 
     /**
      * 鼠标拖动事件
      * 
      * @param e
      */
-    public void mouseDragged(MouseEvent e) {
-    }
+    public void mouseDragged(MouseEvent e) {}
 
     /**
      * 鼠标移动事件
      * 
      * @param e
      */
-    public void mouseMoved(MouseEvent e) {
-    }
+    public void mouseMoved(MouseEvent e) {}
 
     /**
      * 鼠标单击事件
@@ -112,35 +112,32 @@ public class ButtonRendererListenerImp extends JButton implements
      * 
      * @param e
      */
-    public void mousePressed(MouseEvent e) {
-    }
+    public void mousePressed(MouseEvent e) {}
 
     /**
      * 鼠标释放事件
      * 
      * @param e
      */
-    public void mouseReleased(MouseEvent e) {
-    }
+    public void mouseReleased(MouseEvent e) {}
 
     /**
      * 鼠标进入事件
      * 
      * @param e
      */
-    public void mouseEntered(MouseEvent e) {
-    }
+    public void mouseEntered(MouseEvent e) {}
 
     public static void parseRow(String filePath, String fileName) {
 
-        String fileNameImp = fileName.substring(0, fileName.length() - 4)
-                .concat("Imp");
-        String str = "imp " + Conf4Imp.USERID + "@" + Conf4Imp.ADDR + " file="
-                + filePath + " log=" + Conf4Imp.LOG + "\\" + fileNameImp
-                + ".log buffer=819200000 full=" + Conf4Imp.FULL + " ignore="
-                + Conf4Imp.IGNORE + " grants=" + Conf4Imp.GRANTS + " indexes="
-                + Conf4Imp.INDEXES + " rows=" + Conf4Imp.ROWS + " constraints="
-                + Conf4Imp.CONSTRAINTS + " "+Conf4Imp.OTHER;
+        String fileNameImp = fileName.substring(0, fileName.length() - 4).concat("Imp");
+        String str =
+                "imp " + Conf4Imp.USERID + "@" + Conf4Imp.ADDR + " file=" + filePath + " log="
+                        + Conf4Imp.LOG + "\\" + fileNameImp + ".log buffer=819200000 full="
+                        + Conf4Imp.FULL + " ignore=" + Conf4Imp.IGNORE + " grants="
+                        + Conf4Imp.GRANTS + " indexes=" + Conf4Imp.INDEXES + " rows="
+                        + Conf4Imp.ROWS + " constraints=" + Conf4Imp.CONSTRAINTS + " "
+                        + Conf4Imp.OTHER;
         LOGGER.info(str);
         File f = FileUtils.getFile(Conf4Imp.BAT + "\\" + fileNameImp + ".bat");
         try {
@@ -155,8 +152,7 @@ public class ButtonRendererListenerImp extends JButton implements
         }
         try {
             Runtime.getRuntime().exec(
-                    CMDUtil.getNewCmd(fileNameImp, Conf4Imp.BAT + "\\"
-                            + fileNameImp + ".bat"));
+                    CMDUtil.getNewCmd(fileNameImp, Conf4Imp.BAT + "\\" + fileNameImp + ".bat"));
         } catch (IOException e) {
             e.printStackTrace();
         }

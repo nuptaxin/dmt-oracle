@@ -4,6 +4,10 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
+/**
+ * @author renzx
+ *
+ */
 public class Conf4Exp {
     static Logger LOGGER = Logger.getLogger(Conf4Exp.class);
     static public String ADDR = null;
@@ -29,7 +33,7 @@ public class Conf4Exp {
     static public String CONSTRAINTS = null;
     static public String OTHER = null;
     private static PropertiesConfiguration config = null;
-    static{
+    static {
         initConf();
     }
 
@@ -56,8 +60,8 @@ public class Conf4Exp {
         STARTYEAR = config.getString("STARTYEAR", "2015");
         ENDYEAR = config.getString("ENDYEAR", "2016");
         MAXSIZE = config.getString("MAXSIZE", "100M");
-        MAXBYTE=TransferSizeUtil.Str2Long(MAXSIZE);
-        
+        MAXBYTE = TransferSizeUtil.Str2Long(MAXSIZE);
+
         BUFFER = config.getString("BUFFER", "819200000");
         COMPRESS = config.getString("COMPRESS", "N");
         CONSISTENT = config.getString("CONSISTENT", "N");
@@ -91,6 +95,7 @@ public class Conf4Exp {
         ENDYEAR = config.getString("ENDYEAR", "2016");
         MAXSIZE = config.getString("MAXSIZE", "100M");
     }
+
     public static void reReadExp2() {
         BUFFER = config.getString("BUFFER", "819200000");
         COMPRESS = config.getString("COMPRESS", "N");

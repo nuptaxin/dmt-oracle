@@ -2,14 +2,17 @@ package org.renix.dmt.oracle.bean;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @author renzx
+ *
+ */
 @Component
 public class TmpExpData {
     private String type;
     private String tableName;
     private Long bytes;
 
-    public TmpExpData() {
-    }
+    public TmpExpData() {}
 
     public TmpExpData(String type, String tableName, Long bytes) {
         this.type = type;

@@ -2,36 +2,30 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
     xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:task="http://www.springframework.org/schema/task"
-    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:task="http://www.springframework.org/schema/task" xmlns:aop="http://www.springframework.org/schema/aop"
     xsi:schemaLocation="http://www.springframework.org/schema/beans   
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context  
            http://www.springframework.org/schema/context/spring-context.xsd"
     default-autowire="byName">
-    <context:annotation-config/>
+    <context:annotation-config />
     <context:component-scan base-package="org.renix">
     </context:component-scan>
-    
 
 
-	<!-- 数据库连接池C3P0 -->
-    <!-- <bean id="dataSourceTarget" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-        destroy-method="close">
 
-        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-        <property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-        <property name="user" value="open3k" />
-        <property name="password" value="orcl" /> -->
+    <!-- 数据库连接池C3P0 -->
+    <!-- <bean id="dataSourceTarget" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+        destroy-method="close"> <property name="driverClass" value="oracle.jdbc.driver.OracleDriver" 
+        /> <property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" 
+        /> <property name="user" value="open3k" /> <property name="password" value="orcl" 
+        /> -->
 
-        <!-- these are C3P0 properties -->
-        <!-- <property name="acquireIncrement" value="1" />
-        <property name="minPoolSize" value="1" />
-        <property name="maxPoolSize" value="20" />
-        <property name="maxIdleTime" value="60" />
-        <property name="acquireRetryAttempts" value="0" />
-    </bean> -->
-    
+    <!-- these are C3P0 properties -->
+    <!-- <property name="acquireIncrement" value="1" /> <property name="minPoolSize" 
+        value="1" /> <property name="maxPoolSize" value="20" /> <property name="maxIdleTime" 
+        value="60" /> <property name="acquireRetryAttempts" value="0" /> </bean> -->
+
 
     <!-- 数据库连接池DBCP -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -56,22 +50,18 @@
         <property name="minIdle" value="1" />
 
     </bean>
-    
-	<!--数据源配置 Tomcat jdbc -->
-	<!--<bean id="dataSourceTomcat" class="org.apache.tomcat.jdbc.pool.DataSource"
-		destroy-method="close">
 
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="username" value="testhm" />
-		<property name="password" value="orcl" />-->
+    <!--数据源配置 Tomcat jdbc -->
+    <!--<bean id="dataSourceTomcat" class="org.apache.tomcat.jdbc.pool.DataSource" 
+        destroy-method="close"> <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" 
+        /> <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" 
+        /> <property name="username" value="testhm" /> <property name="password" 
+        value="orcl" /> -->
 
-		<!-- 连接池的最大数据库连接数。设为0表示无限制。 -->
-		<!--<property name="maxActive" value="20" />-->
-		<!-- 初始化连接数量 -->
-		<!--<property name="initialSize" value="1" />
-		<property name="minIdle" value="1" />
-		<property name="maxIdle" value="20" />
-	</bean>-->
-	
+    <!-- 连接池的最大数据库连接数。设为0表示无限制。 -->
+    <!--<property name="maxActive" value="20" /> -->
+    <!-- 初始化连接数量 -->
+    <!--<property name="initialSize" value="1" /> <property name="minIdle" 
+        value="1" /> <property name="maxIdle" value="20" /> </bean> -->
+
 </beans>
